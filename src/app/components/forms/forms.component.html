@@ -3,14 +3,16 @@
 <form>
 <fieldset>
 <legend><span class="number">1</span> Search by stop code</legend>
-<input type="text" name="field1" placeholder="Insert stop code here">    
+<input type="text" name="code" placeholder="Insert stop code here" [(ngModel)]="code">    
 </fieldset>
 <input type="submit" value="Search with stop code" />
+</form>
+<form>
 <br>
 <fieldset>
 <legend><span class="number">2</span> Search by stop name</legend>
-<textarea name="field3" placeholder="Insert stop name here"></textarea>
+<input type='text' name="name" placeholder="Insert stop name here" [(ngModel)]="name">
 </fieldset>
-<input type="submit" value="Search for stops" />
+<button class="btn" (click)="log()">Search for stops</button>
 </form>
 </div>

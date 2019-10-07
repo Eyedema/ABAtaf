@@ -78,7 +78,8 @@
 }
 
 .form-style-5 input[type="submit"],
-.form-style-5 input[type="button"]
+.form-style-5 input[type="button"],
+.form-style-5 button
 {
 	position: relative;
 	display: block;
