@@ -1,4 +1,4 @@
 export class Stop {
-    code: number;
+    code: string;
     name: string;
 }

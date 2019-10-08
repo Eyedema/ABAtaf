@@ -1,22 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsComponent } from './components/forms/forms.component';
-import { StopDetailComponent } from './components/stop-detail/stop-detail.component';
+import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsComponent,
-    StopDetailComponent,
+    ResultDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
 <div class="form-style-5">
 <form>
 <fieldset>
-<legend><span class="number">1</span> Search by stop code</legend>
+<legend> Search by stop code</legend>
 <input type="text" name="code" placeholder="Insert stop code here" [(ngModel)]="code">    
 </fieldset>
 <input type="submit" value="Search with stop code" />
@@ -10,9 +10,10 @@
 <form>
 <br>
 <fieldset>
-<legend><span class="number">2</span> Search by stop name</legend>
+<legend> Search by stop name</legend>
 <input type='text' name="name" placeholder="Insert stop name here" [(ngModel)]="name">
 </fieldset>
 <button class="btn" (click)="log()">Search for stops</button>
 </form>
 </div>
+<app-result-detail [result]="result"></app-result-detail>

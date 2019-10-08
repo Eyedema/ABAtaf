@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StopDetailComponent } from './stop-detail.component';
+import { ResultDetailComponent } from './result-detail.component';
 
-describe('StopDetailComponent', () => {
-  let component: StopDetailComponent;
-  let fixture: ComponentFixture<StopDetailComponent>;
+describe('ResultDetailComponent', () => {
+  let component: ResultDetailComponent;
+  let fixture: ComponentFixture<ResultDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StopDetailComponent ]
+      declarations: [ ResultDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StopDetailComponent);
+    fixture = TestBed.createComponent(ResultDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
