@@ -7,6 +7,7 @@
 </fieldset>
 <button class="btn" (click)="searchWithCode()">Search with stop code</button>
 </form>
+<app-result-detail [result]="resultCode"></app-result-detail>
 </div>
 <div class="form-style-5">
 <form>
@@ -14,7 +15,7 @@
 <legend> Search by stop name</legend>
 <input type='text' name="name" placeholder="Insert stop name here" [(ngModel)]="name" required>
 </fieldset>
-<button class="btn" (click)="log()">Search for stops</button>
+<button class="btn" (click)="searchStops()">Search for stops</button>
 </form>
+<app-stop-detail [result]="resultName"></app-stop-detail>
 </div>
-<app-result-detail [result]="result"></app-result-detail>

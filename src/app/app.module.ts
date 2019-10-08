@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
+import { StopDetailComponent } from './components/stop-detail/stop-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsComponent,
-    ResultDetailComponent
+    ResultDetailComponent,
+    StopDetailComponent
   ],
   imports: [
     BrowserModule,
