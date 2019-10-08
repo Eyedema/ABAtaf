@@ -35,13 +35,13 @@ export class FormsComponent implements OnInit {
         } else{
           this.resultName = data;
         }
-      })
+      });
   }
 
   searchWithCode(){
     console.log('chiamato searchWithCode()');
     this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/schedule?nodeID='+this.code+'&lat=43&lon=11&timeZone=%2B2', false);
-    this.resultDetail.setCorrectDate(this.resultCode);
+    this.resultDetail.setCorrectDate();
   }
 
   searchStops(){
@@ -51,7 +51,5 @@ export class FormsComponent implements OnInit {
       this.stopDetail.update();
     }
   }
-
-  log(){}
   
 }
