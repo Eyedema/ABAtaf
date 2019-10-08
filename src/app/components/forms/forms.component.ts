@@ -25,27 +25,18 @@ export class FormsComponent implements OnInit {
     this.endpoint = 'http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/schedule?nodeID='+this.code+'&lat=43&lon=11&timeZone=%2B2';
   }
 
-  setCode(inputCode: string){
-    this.code = inputCode;
-  }
-
-  setName(inputName: string){
-    this.name = inputName;
-  }
-
-  showConfig(){
+  pullResults(){
     this.service.getData(this.endpoint)
       .subscribe((data: any[])=> {
         this.result = data;
       })
   }
 
-  log(){
-    this.setStop(this.code, this.name)
-    console.log(this.stop);
-    console.log(this.code);
-    console.log(this.name);
-    this.showConfig();
+  searchWithCode(){
+    this.endpoint = 'http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/schedule?nodeID='+this.code+'&lat=43&lon=11&timeZone=%2B2';
+    this.pullResults();
   }
-
+  
+  log(){}
+  
 }

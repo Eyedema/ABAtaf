@@ -31,7 +31,8 @@ export class ResultDetailComponent implements OnInit {
   }
 
   buildDate(atafNumber: number){ 
-    return formatDate(new Date(Number(this.date.getTime())+Number(atafNumber)),'dd/MM hh:mm', 'it');
+    return formatDate(new Date(Number(this.date.getTime())+Number(atafNumber)),'dd/MM HH:mm', 'it');
   }
 
+  
 }
