@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
 import { StopDetailComponent } from './components/stop-detail/stop-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StopDetailComponent } from './components/stop-detail/stop-detail.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

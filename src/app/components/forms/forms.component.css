@@ -1,4 +1,5 @@
-.form-style-5{
+.form-style-5,
+.form-style-6{
 	max-width: 500px;
 	padding: 10px 20px;
 	background: #f4f7f8;
@@ -95,6 +96,22 @@
 	border-width: 1px 1px 3px;
 	margin-bottom: 10px;
 }
+.form-style-6 button
+{
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #DB5461;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 100%;
+	border: 1px solid #BC4753;
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover,
 .form-style-5 button:hover
@@ -102,6 +119,12 @@
 	background: #109177;
 }
 
-app-result-detail{
+.form-style-6 button:hover
+{
+	background: #BC4753;
+}
+
+app-result-detail,
+app-stop-detail{
 	text-align: center;
 }

@@ -65,5 +65,9 @@ export class FormsComponent implements OnInit {
     }
     return data;
   }
+
+  clear(){
+    this.code=this.name=this.resultCode=this.resultName=null;
+  }
   
 }
