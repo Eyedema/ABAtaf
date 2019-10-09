@@ -1,9 +1,6 @@
-<p>{{ result }}</p>
-<div *ngIf="oktorender && result.length===0"><p>Nessun transito</p></div>
+<div *ngIf="oktorender && resultservice.length===0"><p>Nessun transito</p></div>
     <ul>
-        <li *ngFor="let bus of result">
-                <div *ngIf="!oktorender || !bus">
+        <li *ngFor="let bus of resultservice">
                     {{ bus['d'] }} - Linea {{bus['n']}}, {{bus['t']}}<br>
-                </div>
         </li>
     </ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AtafserviceService } from '../../services/atafservice.service';
+import { BridgeService } from '../../services/bridge.service';
 
 import { Stop } from '../../stop'
 import { ResultDetailComponent } from '../result-detail/result-detail.component'
@@ -17,7 +18,7 @@ export class FormsComponent implements OnInit {
   resultCode: any;
   resultName: any;
 
-  constructor(private service : AtafserviceService, private resultDetail: ResultDetailComponent, private stopDetail: StopDetailComponent) { }
+  constructor(private service : AtafserviceService, private bridge: BridgeService, private resultDetail: ResultDetailComponent, private stopDetail: StopDetailComponent) { }
 
   
   ngOnInit() {
@@ -32,23 +33,22 @@ export class FormsComponent implements OnInit {
       .subscribe((data: any[])=> {
         if(!flag){          
           this.resultCode = data;
+          this.bridge.setResultCode(data);
         } else{
           this.resultName = data;
+          this.bridge.setResultName(data);
         }
       });
   }
 
   searchWithCode(){
-    console.log('chiamato searchWithCode()');
     this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/schedule?nodeID='+this.code+'&lat=43&lon=11&timeZone=%2B2', false);
-    this.resultDetail.setCorrectDate();
   }
 
   searchStops(){
     if(this.name!=''){
       console.log('chiamato searchStops()');
       this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/search?urLat=44&urLon=12&llLat=43&llLon=10&st='+this.name, true);
-      this.stopDetail.update();
     }
   }
   

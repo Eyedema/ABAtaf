@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Injectable } from '@angular/core';
 import {formatDate, registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
+
+
+import { BridgeService } from '../../services/bridge.service';
 registerLocaleData(localeIt, 'it');
 
 @Injectable({
@@ -14,31 +17,35 @@ registerLocaleData(localeIt, 'it');
 })
 export class ResultDetailComponent implements OnInit {
 
-  @Input() result: any;
+
+  constructor(private bridge: BridgeService) { }
+
   @Input() code: any;
+  resultservice: any;
   today = new Date();
   date = new Date(this.today.getFullYear(),this.today.getMonth(),this.today.getDate(),2);
   oktorender : boolean = false;
 
   public setCorrectDate(){
-    //perché qui stampa undefined??? non entra nel ciclo..deve entrare
-    console.log(this.result);
-    if(this.result != undefined){
+    if(this.resultservice != undefined){
       console.log('entrato nel ciclo per cambio data');
-      this.result.forEach(element => {
+      this.resultservice.forEach(element => {
         element['d']=this.buildDate(element['d'])
       });
       this.oktorender = true;
     }
   }
 
-  constructor() { }
-
   ngOnInit() {
   }
 
   ngOnChanges(){
-    console.log(this.result);
+    this.resultservice = this.bridge.getResultCode();
+    console.log('ngOnChanges ', this.resultservice)
+    this.setCorrectDate();
+  }
+
+  ngAfterViewChecked(){
   }
 
   buildDate(atafNumber: any){ 
