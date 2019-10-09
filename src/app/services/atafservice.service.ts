@@ -10,7 +10,7 @@ export class AtafserviceService {
 
   constructor(private http: HttpClient) { }
 
-  getData(endpoint : string) : Observable<any>{
+  getData(endpoint: string): Observable<any> {
     return this.http.get<any[]>(endpoint);
   }
 

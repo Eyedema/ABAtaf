@@ -4,25 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BridgeService {
-  
+
   constructor() { }
-  
+
   resultCode: any;
   resultName: any;
 
-  setResultCode(resultCode: any){
+  setResultCode(resultCode: any) {
     this.resultCode = resultCode;
   }
 
-  setResultName(resultName: any){
+  setResultName(resultName: any) {
     this.resultName = resultName;
   }
 
-  getResultCode(){
+  getResultCode() {
     return this.resultCode;
   }
 
-  getResultName(){
+  getResultName() {
     return this.resultName;
   }
 }

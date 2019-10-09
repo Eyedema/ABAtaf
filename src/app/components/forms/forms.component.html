@@ -1,26 +1,26 @@
 
 <div class="form-style-5">
-<form>
-<fieldset>
-<legend> Search by stop code</legend>
-<input type="text" name="code" placeholder="Insert stop code here" [(ngModel)]="code" required>    
-</fieldset>
-<button class="btn" (click)="searchWithCode()">Search with stop code</button>
-</form>
-<app-result-detail [result]="resultCode" [code]="code"></app-result-detail>
+  <form>
+    <fieldset>
+      <legend> Search by stop code</legend>
+      <input type="text" name="code" placeholder="Insert stop code here" [(ngModel)]="code" required>
+    </fieldset>
+    <button class="btn" (click)="searchWithCode()">Search with stop code</button>
+  </form>
+  <app-result-detail [result]="resultCode" [code]="code"></app-result-detail>
 </div>
 <div class="form-style-5">
-<form>
-<fieldset>
-<legend> Search by stop name</legend>
-<input type='text' name="name" placeholder="Insert stop name here" [(ngModel)]="name" required>
-</fieldset>
-<button class="btn" (click)="searchStops()">Search for stops</button>
-</form>
-<app-stop-detail [result]="resultName"></app-stop-detail>
+  <form>
+    <fieldset>
+      <legend> Search by stop name</legend>
+      <input type='text' name="name" placeholder="Insert stop name here" [(ngModel)]="name" required>
+    </fieldset>
+    <button class="btn" (click)="searchStops()">Search for stops</button>
+  </form>
+  <app-stop-detail [result]="resultName"></app-stop-detail>
 </div>
 <div class="form-style-6">
-    <form>
+  <form>
     <button class="btn" (click)="clear()">Clear results</button>
-    </form>
-    </div>
+  </form>
+</div>

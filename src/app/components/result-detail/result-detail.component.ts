@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Injectable } from '@angular/core';
-import {formatDate, registerLocaleData } from '@angular/common';
+import { formatDate, registerLocaleData } from '@angular/common';
 
 
 @Injectable({
@@ -22,10 +22,10 @@ export class ResultDetailComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
   }
 
-  ngAfterViewChecked(){
+  ngAfterViewChecked() {
   }
-  
+
 }

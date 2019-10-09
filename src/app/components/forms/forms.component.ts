@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AtafserviceService } from '../../services/atafservice.service';
 import { BridgeService } from '../../services/bridge.service';
-import {formatDate, registerLocaleData } from '@angular/common';
+import { formatDate, registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 
 import { Stop } from '../../stop'
@@ -14,60 +14,60 @@ import { StopDetailComponent } from '../stop-detail/stop-detail.component';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  stop : Stop;
-  code : string;
-  name : string;
+  stop: Stop;
+  code: string;
+  name: string;
   resultCode: any;
   resultName: any;
   today = new Date();
-  date = new Date(this.today.getFullYear(),this.today.getMonth(),this.today.getDate(),2);
+  date = new Date(this.today.getFullYear(), this.today.getMonth(), this.today.getDate(), 2);
 
-  constructor(private service : AtafserviceService, private bridge: BridgeService, private resultDetail: ResultDetailComponent, private stopDetail: StopDetailComponent) { }
+  constructor(private service: AtafserviceService, private bridge: BridgeService, private resultDetail: ResultDetailComponent, private stopDetail: StopDetailComponent) { }
 
-  
+
   ngOnInit() {
   }
 
-  setStop(inputCode: string, inputName: string){
-    this.stop = {code: inputCode, name: inputName};
+  setStop(inputCode: string, inputName: string) {
+    this.stop = { code: inputCode, name: inputName };
   }
 
-  pullResults(endpoint: string, flag : boolean){
+  pullResults(endpoint: string, flag: boolean) {
     this.service.getData(endpoint)
-      .subscribe((data: any[])=> {
-        if(!flag){          
+      .subscribe((data: any[]) => {
+        if (!flag) {
           this.resultCode = this.setCorrectDate(data);
-        } else{
+        } else {
           this.resultName = data;
         }
       });
   }
 
-  searchWithCode(){
-    this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/schedule?nodeID='+this.code+'&lat=43&lon=11&timeZone=%2B2', false);
+  searchWithCode() {
+    this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/schedule?nodeID=' + this.code + '&lat=43&lon=11&timeZone=%2B2', false);
   }
 
-  searchStops(){
-    if(this.name!=''){
-      this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/search?urLat=44&urLon=12&llLat=43&llLon=10&st='+this.name, true);
+  searchStops() {
+    if (this.name != '') {
+      this.pullResults('http://www.temporealeataf.it/Mixer/Rest/PublicTransportService.svc/search?urLat=44&urLon=12&llLat=43&llLon=10&st=' + this.name, true);
     }
   }
 
-  buildDate(atafNumber: any){
-    return formatDate(new Date(Number(this.date.getTime())+Number(atafNumber)),'dd/MM HH:mm','en-EN');
+  buildDate(atafNumber: any) {
+    return formatDate(new Date(Number(this.date.getTime()) + Number(atafNumber)), 'dd/MM HH:mm', 'en-EN');
   }
 
-  public setCorrectDate(data: any){
-    if(data != undefined){
+  public setCorrectDate(data: any) {
+    if (data != undefined) {
       data.forEach(element => {
-        element['d']=this.buildDate(element['d'])
+        element['d'] = this.buildDate(element['d'])
       });
     }
     return data;
   }
 
-  clear(){
-    this.code=this.name=this.resultCode=this.resultName=null;
+  clear() {
+    this.code = this.name = this.resultCode = this.resultName = null;
   }
-  
+
 }
